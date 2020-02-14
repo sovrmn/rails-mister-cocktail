@@ -1,0 +1,36 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://www.custodeco.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/1/21007076-1.jpgttachments/95/95670/attachment_95670680", class: "avatar" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Go back to cocktail list", cocktails_path, class: "nav-link", class: "btn btn-inverse" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1534348314648-fa85a4e8955f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80">
+  <div class="container">
+    <h1>Create your new cocktail</h1>
+    <p>We can't wait to taste it!!</p>
+  </div>
+</div>
+
+<div class=container >
+
+<%= simple_form_for(@cocktail) do |f| %>
+  <%= f.input :name %>
+  <%= f.submit%>
+<% end %>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://www.custodeco.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/2/1/21007076-1.jpg", class: "avatar" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Create your own cocktails", new_cocktail_path(@cocktail), class: "nav-link", class: "btn btn-inverse" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1536935338788-846bb9981813?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1586&q=80);">
+  <div class="container">
+    <h1>Welcome to the Mixologist!</h1>
+    <p>Have fun creating your cocktails! Cheers!</p>
+  </div>
+</div>
+
+<div class="container ">
+
+<!-- <ul>
+  <% @cocktails.each do |cocktail|%>
+    <li><%= link_to cocktail.name, cocktail_path(cocktail.id)%></li>
+    <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class="fas fa-trash-alt" style="font-size: 15px; margin-top: 15px"></i>
+    <% end %>
+  <% end %> -->
+
+  <div class="cards">
+      <% @cocktails.each do |cocktail|%>
+          <div class="card my-3 " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1560508180-03f285f67ded?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+          <%= link_to cocktail.name, cocktail_path(cocktail.id)%>
+          <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt" style="font-size: 15px; margin-top: 15px"></i>
+            <% end %>
+          </div>
+
+      <% end %>
+  </div>
+
+</div>
+
+
+
+
+
+
+

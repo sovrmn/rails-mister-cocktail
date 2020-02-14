@@ -4,3 +4,16 @@
 2020-02-13 11:59:51.252 CET [16806] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
 2020-02-13 11:59:51.261 CET [16807] LOG:  database system was shut down at 2020-02-13 11:59:50 CET
 2020-02-13 11:59:51.263 CET [16806] LOG:  database system is ready to accept connections
+2020-02-13 12:52:17.078 CET [20465] ERROR:  update or delete on table "ingredients" violates foreign key constraint "fk_rails_961afcf26a" on table "doses"
+2020-02-13 12:52:17.078 CET [20465] DETAIL:  Key (id)=(42) is still referenced from table "doses".
+2020-02-13 12:52:17.078 CET [20465] STATEMENT:  DELETE FROM "ingredients" WHERE "ingredients"."id" = $1
+2020-02-13 12:56:51.324 CET [20691] ERROR:  update or delete on table "ingredients" violates foreign key constraint "fk_rails_961afcf26a" on table "doses"
+2020-02-13 12:56:51.324 CET [20691] DETAIL:  Key (id)=(78) is still referenced from table "doses".
+2020-02-13 12:56:51.324 CET [20691] STATEMENT:  DELETE FROM "ingredients" WHERE "ingredients"."id" = $1
+2020-02-13 12:57:41.980 CET [20802] ERROR:  update or delete on table "ingredients" violates foreign key constraint "fk_rails_961afcf26a" on table "doses"
+2020-02-13 12:57:41.980 CET [20802] DETAIL:  Key (id)=(88) is still referenced from table "doses".
+2020-02-13 12:57:41.980 CET [20802] STATEMENT:  DELETE FROM "ingredients" WHERE "ingredients"."id" = $1
+2020-02-14 01:48:23.426 CET [16806] LOG:  received smart shutdown request
+2020-02-14 01:48:23.427 CET [16806] LOG:  background worker "logical replication launcher" (PID 16813) exited with exit code 1
+2020-02-14 01:48:23.427 CET [16808] LOG:  shutting down
+2020-02-14 01:48:23.438 CET [16806] LOG:  database system is shut down
