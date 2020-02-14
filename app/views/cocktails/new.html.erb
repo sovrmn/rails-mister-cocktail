@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Go back to cocktail list", cocktails_path, class: "nav-link", class: "btn btn-inverse" %>
+        <%= link_to "Go back to cocktail list", root_path, class: "nav-link", class: "btn btn-inverse" %>
       </li>
     </ul>
   </div>
@@ -30,7 +30,9 @@
 
 <%= simple_form_for(@cocktail) do |f| %>
   <%= f.input :name %>
+  <%=f.input :photo, as: :file %>
   <%= f.submit%>
 <% end %>
+
 
 </div>
