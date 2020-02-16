@@ -18,33 +18,35 @@
 </div>
 
 <div class="container">
-    <h1><%= @cocktail.name %></h1>
-    <% if @cocktail.photo.attached? %>
-      <%= cl_image_tag @cocktail.photo.key, width: 400, height: 300, crop: :fill %>
-    <% end %>
-    <ul>
-      <% @cocktail.doses.each do |dose| %>
-      <li><%= dose.description %> of <%= dose.ingredient.name %></li>
-      <%end %>
-    </ul>
+  <h1><%= @cocktail.name %></h1>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key, width: 400, height: 300, crop: :fill %>
+  <% end %>
+  <ul>
+    <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> of <%= dose.ingredient.name %></li>
+    <%end %>
+  </ul>
 
 
-<p>Add an ingredient to your cocktail's recipe</p>
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit  %>
-<% end %>
+  <p class="my-3"><strong>Add an ingredient to your cocktail's recipe</strong></p>
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit  %>
+  <% end %>
 
-<p>Add a picture</p>
-<%= simple_form_for [@cocktail] do |f| %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit  %>
-<% end %>
-
-
+  <p class="my-3"><strong>Add a picture</strong></p>
+  <%= simple_form_for [@cocktail] do |f| %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit  %>
+  <% end %>
 
 
-<%= link_to "Delete #{@cocktail.name}", root_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } %>
+  <p> <strong>Delete cocktail</strong><%= link_to cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <i id ="trash" class="fas fa-trash-alt" style="font-size: 15px; margin-top: 15px "></i>
+  <% end %>
+  </p>
+
 
 </div>

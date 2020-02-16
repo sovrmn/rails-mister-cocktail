@@ -30,17 +30,9 @@
 
 <div class="container ">
 
-<!-- <ul>
-  <% @cocktails.each do |cocktail|%>
-    <li><%= link_to cocktail.name, cocktail_path(cocktail.id)%></li>
-    <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
-    <i class="fas fa-trash-alt" style="font-size: 15px; margin-top: 15px"></i>
-    <% end %>
-  <% end %> -->
-
   <div class="cards">
       <% @cocktails.each do |cocktail|%>
-          <div class="card my-3 " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1560508180-03f285f67ded?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80)">
+          <div class="card my-3 " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 300, width: 400, crop: :fill %>')">
           <%= link_to cocktail.name, cocktail_path(cocktail.id)%>
           <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-trash-alt" style="font-size: 15px; margin-top: 15px"></i>
